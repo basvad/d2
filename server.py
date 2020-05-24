@@ -14,7 +14,7 @@ def index():
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Генератор утверждений</title>
+    <title>D2.10 Домашнее задание</title>
   </head>
   <body>
     <div class="container">
