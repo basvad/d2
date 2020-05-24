@@ -2,8 +2,12 @@ import os
 import random
 import sentry_sdk
 from bottle import route, run , request
+from sentry_sdk.integrations.bottle import BottleIntegration  
 
-
+sentry_sdk.init(
+    dsn="https://10b462f1a4844dcc89ea3bb104d10746@o397103.ingest.sentry.io/5251292",
+    integrations=[BottleIntegration()]
+)
 
 def generate_message():
     return "ТЕСТ"
