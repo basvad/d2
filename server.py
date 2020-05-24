@@ -5,7 +5,7 @@ from bottle import route, run
 
 
 def generate_message():
-    return "Сегодня уже не вчера, ещё не завтра"
+    return "ТЕСТ"
 
 
 @route("/")
@@ -20,7 +20,6 @@ def index():
     <div class="container">
       <h1>Коллеги, добрый день!</h1>
       <p>{}</p>
-      <p class="small">Чтобы обновить это заявление, обновите страницу</p>
     </div>
   </body>
 </html>
@@ -28,11 +27,13 @@ def index():
         generate_message()
     )
     return html
-
-
-@route("/api/roll/<some_id:int>")
-def example_api_response(some_id):
-    return {"requested_id": some_id, "random_number": random.randrange(some_id)}
+@route("/fail")  
+def index():  
+    raise RuntimeError("There is an error!")  
+    return  
+@route("/success")  
+def hello_world():
+    return "Hello world!"
 
 
 if os.environ.get("APP_LOCATION") == "heroku":
